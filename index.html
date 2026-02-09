@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Monica – Digital Success Mentor for Women</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Transform your digital presence with Monica. Join 5000+ women mastering phone-based income skills. Expert mentorship, flexible learning, proven results.">
+  <meta property="og:title" content="Monica – Digital Success Mentor for Women">
+  <meta property="og:description" content="Join thousands of women building successful digital careers from home. Start your journey today.">
+  <meta property="og:image" content="https://i.ibb.co/nN7Mh4QM/Monica-Printout.jpg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    :root{
+      /* Feminine Color Palette - Soft & Elegant */
+      --blush-pink: #fce4ec;
+      --rose-pink: #f8bbd9;
+      --dusty-rose: #d81b60;
+      --soft-coral: #ff8a80;
+      --cream: #fff8e1;
+      --warm-white: #fffaf0;
+      --charcoal: #2d3436;
+      --soft-gray: #636e72;
+      --light-gray: #b2bec3;
+      --border-soft: #ffe0e6;
+      
+      /* Accent */
+      --primary-accent: #c2185b;
+      --primary-light: #e91e63;
+      --glow-pink: rgba(216, 27, 96, 0.2);
+    }
+    
+    *{box-sizing:border-box;margin:0;padding:0}
+    
+    body{
+      background: var(--warm-white);
+      color: var(--charcoal);
+      font-family: 'Poppins', sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+    }
+
+    /* Navbar */
+    .navbar{
+      background: transparent;
+      padding:1.2rem 0;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .navbar.scrolled{
+      background:rgba(255, 250, 240, 0.98);
+      backdrop-filter:blur(15px);
+      border-bottom: 1px solid var(--border-soft);
+      padding:0.8rem 0;
+      box-shadow: 0 4px 20px rgba(216, 27, 96, 0.08);
+    }
+    .navbar-brand{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.8rem;
+      font-weight:700;
+      color:var(--primary-accent) !important;
+      letter-spacing:0.5px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .navbar-brand::before {
+      content: '✦';
+      color: var(--dusty-rose);
+      font-size: 1.2rem;
+    }
+    .nav-link{
+      color:var(--charcoal) !important;
+      font-weight:500;
+      margin:0 1.2rem;
+      position:relative;
+      transition:all 0.3s ease;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+    .nav-link:hover{
+      color:var(--primary-accent) !important;
+    }
+    .nav-link::after{
+      content:'';
+      position:absolute;
+      bottom:-5px;
+      left:50%;
+      transform:translateX(-50%);
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg, var(--dusty-rose), var(--soft-coral));
+      transition:width 0.3s ease;
+      border-radius: 2px;
+    }
+    .nav-link:hover::after{
+      width:80%;
+    }
+    .btn-nav{
+      background: linear-gradient(135deg, var(--primary-accent), var(--primary-light));
+      color: white !important;
+      border: none;
+      padding:0.6rem 1.5rem;
+      border-radius:50px;
+      font-weight:600;
+      font-size: 0.85rem;
+      transition:all 0.3s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:0.4rem;
+      box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+    }
+    .btn-nav:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100%{transform: translateY(0px);}
+      50%{transform: translateY(-10px);}
+    }
+    @keyframes pulseGlow {
+      0%,100%{box-shadow:0 0 0 0 rgba(216, 27, 96, 0.4);}
+      50%{box-shadow:0 0 20px 10px rgba(216, 27, 96, 0.1);}
+    }
+    @keyframes shimmer {
+      0%{background-position: -1000px 0;}
+      100%{background-position: 1000px 0;}
+    }
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(40px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    @keyframes scaleIn{
+      from{opacity:0;transform:scale(0.9);}
+      to{opacity:1;transform:scale(1);}
+    }
+    @keyframes slideInLeft{
+      from{opacity:0;transform:translateX(-50px);}
+      to{opacity:1;transform:translateX(0);}
+    }
+    @keyframes slideInRight{
+      from{opacity:0;transform:translateX(50px);}
+      to{opacity:1;transform:translateX(0);}
+    }
+    
+    .animate-float{animation: float 6s ease-in-out infinite;}
+    .animate-pulse-glow{animation: pulseGlow 2s infinite;}
+    .animate-fade-up{animation:fadeInUp 0.8s ease-out forwards;opacity:0;}
+    .animate-scale-in{animation:scaleIn 0.6s ease-out forwards;opacity:0;}
+    .animate-slide-left{animation:slideInLeft 0.8s ease-out forwards;opacity:0;}
+    .animate-slide-right{animation:slideInRight 0.8s ease-out forwards;opacity:0;}
+    
+    .delay-100{animation-delay: 0.1s;}
+    .delay-200{animation-delay: 0.2s;}
+    .delay-300{animation-delay: 0.3s;}
+    .delay-400{animation-delay: 0.4s;}
+    .delay-500{animation-delay: 0.5s;}
+
+    /* Sections */
+    section{padding:80px 0;position:relative;}
+    
+    /* HERO */
+    .hero-section{
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--blush-pink) 0%, var(--warm-white) 50%, var(--cream) 100%);
+      display:flex;
+      align-items:center;
+      padding:120px 20px 60px;
+      position:relative;
+      overflow:hidden;
+    }
+    
+    .hero-bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      animation: float 8s ease-in-out infinite;
+    }
+    .shape-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--rose-pink);
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+    .shape-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--soft-coral);
+      bottom: -50px;
+      left: -50px;
+      animation-delay: 2s;
+    }
+    .shape-3 {
+      width: 200px;
+      height: 200px;
+      background: var(--dusty-rose);
+      top: 50%;
+      left: 30%;
+      opacity: 0.3;
+      animation-delay: 4s;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--primary-accent);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-soft);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .hero-headline{
+      font-size:3.2rem;
+      font-weight:700;
+      line-height:1.1;
+      margin-bottom:1.2rem;
+      color:var(--charcoal);
+      letter-spacing: -1px;
+    }
+    
+    .hero-headline .highlight{
+      background: linear-gradient(135deg, var(--dusty-rose), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+    
+    .hero-subheadline{
+      font-size:1.15rem;
+      font-weight:400;
+      color:var(--soft-gray);
+      margin-bottom:2rem;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    /* Countdown Timer */
+    .countdown-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.1);
+      max-width: 450px;
+      animation: fadeInUp 0.8s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+    
+    .countdown-label {
+      font-size: 0.8rem;
+      color: var(--soft-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .countdown-timer {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    
+    .countdown-item {
+      text-align: center;
+      min-width: 60px;
+    }
+    
+    .countdown-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+    }
+    
+    .countdown-unit {
+      font-size: 0.7rem;
+      color: var(--soft-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .btn-primary-custom{
+      display:inline-flex;
+      align-items:center;
+      gap:0.6rem;
+      background: linear-gradient(135deg, var(--primary-accent), var(--primary-light));
+      color: white;
+      padding:1rem 2rem;
+      border-radius:50px;
+      font-weight:600;
+      font-size:1rem;
+      text-decoration:none;
+      border: none;
+      transition:all 0.3s ease;
+      cursor:pointer;
+      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary-custom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-primary-custom:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary-custom:hover{
+      transform:translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(216, 27, 96, 0.4);
+      color: white;
+    }
+
+    .hero-image-container {
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .hero-image {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      box-shadow: 0 20px 50px rgba(216, 27, 96, 0.2);
+      border: 5px solid white;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-image-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--rose-pink), var(--soft-coral));
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    /* About Section */
+    .about-section{
+      background: white;
+      position: relative;
+    }
+    
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
+    }
+    
+    .about-img-container {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .about-img{
+      width:100%;
+      height:auto;
+      max-height:550px;
+      border-radius: 20px;
+      object-fit:cover;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-img-decoration {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 3px solid var(--dusty-rose);
+      border-radius: 20px;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      opacity: 0.3;
+    }
+    
+    .about-content {padding-left: 2rem;}
+    
+    .section-tag {
+      display: inline-block;
+      color: var(--primary-accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 40px;
+    }
+    
+    .section-tag::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 2px;
+      background: var(--primary-accent);
+    }
+    
+    .about-text-container {
+      padding: 0;
+    }
+    
+    .about-text-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+    
+    .about-role {
+      color: var(--primary-accent);
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .about-role::before {
+      content: '—';
+      color: var(--soft-coral);
+    }
+    
+    .about-text-container p {
+      color: var(--soft-gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    
+    .btn-secondary-custom{
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      background: transparent;
+      color: var(--primary-accent);
+      padding:0.9rem 1.8rem;
+      border-radius:50px;
+      font-weight:600;
+      font-size:0.95rem;
+      text-decoration:none;
+      border: 2px solid var(--primary-accent);
+      transition:all 0.3s ease;
+      cursor:pointer;
+      margin-top: 1rem;
+    }
+    
+    .btn-secondary-custom:hover{
+      background: var(--primary-accent);
+      color: white;
+      transform:translateY(-2px);
+    }
+    
+    /* Stats */
+    .stats-container {
+      margin-top: 2.5rem;
+    }
+    
+    .stat-card{
+      background: white;
+      padding:1.8rem 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      text-align:center;
+      transition:all .4s ease;
+      height:100%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dusty-rose), var(--soft-coral));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .stat-card:hover{
+      transform:translateY(-5px);
+      box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
+      border-color: var(--rose-pink);
+    }
+    
+    .stat-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .counter{
+      font-size:2.5rem;
+      font-weight:700;
+      color:var(--primary-accent);
+      margin-bottom: 0.3rem;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .stat-card .text-muted{
+      color:var(--soft-gray) !important; 
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Feedback Section */
+    .feedback-section{
+      background: linear-gradient(to bottom, var(--warm-white), white);
+      overflow:hidden;
+      position: relative;
+    }
+    
+    .feedback-section::before {
+      content: '❝';
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      font-size: 200px;
+      color: var(--blush-pink);
+      opacity: 0.5;
+      font-family: serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+    
+    .feedback-viewport{
+      overflow:hidden;
+      margin:2rem 0;
+      mask:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);
+      -webkit-mask:linear-gradient(90deg,transparent 0%,black 8%,black 92%,transparent 100%);
+    }
+    
+    .feedback-track{
+      display:flex;
+      gap:25px;
+      width:max-content;
+      animation:scrollLeft 35s linear infinite;
+    }
+    
+    .feedback-track:hover{animation-play-state:paused;}
+    
+    @keyframes scrollLeft{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
+    
+    .feedback-item{
+      flex-shrink:0;
+      width:300px;
+      height:400px;
+      border-radius:16px;
+      overflow:hidden;
+      transition:all 0.4s ease;
+      position:relative;
+      border: 1px solid var(--border-soft);
+      background:white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+    
+    .feedback-item:hover{
+      transform:scale(1.03) translateY(-5px);
+      box-shadow: 0 15px 40px rgba(216, 27, 96, 0.2);
+      border-color: var(--rose-pink);
+    }
+    
+    .feedback-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition: transform 0.5s ease;
+    }
+    
+    .feedback-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Steps Section */
+    .steps-section{
+      background: white;
+      position: relative;
+    }
+    
+    .step-card{
+      background: white;
+      border-radius: 20px;
+      padding:2rem 1.5rem;
+      border:1px solid var(--border-soft);
+      transition:all .4s ease;
+      height:100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .step-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(to top, var(--blush-pink), transparent);
+      transition: height 0.4s ease;
+      z-index: 0;
+    }
+    
+    .step-card:hover{
+      transform:translateY(-8px);
+      border-color: var(--dusty-rose);
+      box-shadow: 0 15px 40px rgba(216, 27, 96, 0.15);
+    }
+    
+    .step-card:hover::after {
+      height: 100%;
+    }
+    
+    .step-number{
+      width:50px; 
+      height:50px;
+      background: linear-gradient(135deg, var(--primary-accent), var(--primary-light));
+      color: white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:1.2rem;
+      margin: 0 auto 1.2rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+    }
+    
+    .step-card h3{
+      color:var(--charcoal); 
+      font-size: 1.2rem; 
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .step-card p{
+      color:var(--soft-gray); 
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+    
+    .step-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--blush-pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--primary-accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FAQ Section */
+    .faq-section{
+      background: var(--warm-white);
+      position: relative;
+    }
+    
+    .accordion-item{
+      background: white;
+      border: 1px solid var(--border-soft);
+      border-radius: 16px !important;
+      margin-bottom:1rem;
+      overflow:hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      transition: all 0.3s ease;
+    }
+    
+    .accordion-item:hover {
+      box-shadow: 0 8px 25px rgba(216, 27, 96, 0.1);
+    }
+    
+    .accordion-button{
+      background: white;
+      color: var(--charcoal);
+      padding:1.3rem;
+      font-weight:600;
+      border:none;
+      box-shadow:none !important;
+      font-size: 1rem;
+    }
+    
+    .accordion-button:not(.collapsed){
+      background: white;
+      color: var(--primary-accent);
+    }
+    
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c2185b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      transition: transform 0.3s ease;
+    }
+    
+    .accordion-body{
+      background: white;
+      color:var(--soft-gray);
+      padding:0 1.3rem 1.3rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* CTA Section */
+    .cta-section{
+      background: linear-gradient(180deg, white 0%, var(--blush-pink) 100%);
+      position:relative;
+      overflow:hidden;
+    }
+    
+    .cta-card{
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 20px 60px rgba(216, 27, 96, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(216, 27, 96, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .info-box{
+      background: var(--warm-white);
+      border: 1px solid var(--border-soft);
+      color: var(--soft-gray);
+      font-size: 0.9rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .info-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-color: var(--rose-pink);
+    }
+    
+    .info-box strong {
+      color: var(--charcoal);
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+    
+    .insta-link{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--primary-accent);
+      text-decoration:none;
+      font-weight:600;
+      transition:all .3s ease;
+      margin-top:15px;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 50px;
+      background: rgba(216, 27, 96, 0.1);
+    }
+    
+    .insta-link:hover{
+      background: rgba(216, 27, 96, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Form Popup */
+    .form-backdrop{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(12px);
+      z-index:9999;
+      opacity:0;visibility:hidden;
+      transition:all .4s ease;
+    }
+    .form-backdrop.show{opacity:1;visibility:visible;}
+    
+    #formContainer{
+      position:fixed;top:50%;left:50%;
+      transform:translate(-50%,-50%) scale(.9);
+      z-index:10000;
+      max-width:450px;width:90%;
+      max-height:90vh;
+      opacity:0;visibility:hidden;
+      transition:all .4s ease;
+    }
+    
+    #formContainer.show{
+      opacity:1;visibility:visible;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    
+    .form-card{
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+    }
+    
+    .form-header {
+      background: linear-gradient(135deg, var(--blush-pink), var(--warm-white));
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    
+    .form-header h2 {
+      color: var(--primary-accent);
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-control,.form-select{
+      background: var(--warm-white);
+      border: 1px solid var(--border-soft);
+      color: var(--charcoal);
+      padding:0.9rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus,.form-select:focus{
+      background: white;
+      border-color: var(--primary-accent);
+      color: var(--charcoal);
+      box-shadow: 0 0 0 4px rgba(216, 27, 96, 0.1);
+    }
+    
+    .form-label{
+      color:var(--soft-gray);
+      font-weight:500;
+      margin-bottom:0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .btn-submit{
+      background: linear-gradient(135deg, var(--primary-accent), var(--primary-light));
+      color: white;
+      border:none;
+      padding:1rem;
+      width:100%;
+      border-radius: 12px;
+      font-weight:600;
+      font-size:1.05rem;
+      transition:all 0.3s ease;
+      margin-top: 0.5rem;
+      box-shadow: 0 5px 20px rgba(216, 27, 96, 0.3);
+    }
+    
+    .btn-submit:hover{
+      transform:translateY(-2px);
+      box-shadow: 0 8px 25px rgba(216, 27, 96, 0.4);
+    }
+
+    /* Privacy Policy Modal */
+    .pp-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.8);
+      backdrop-filter:blur(10px);
+      z-index:10001;
+      opacity:0;
+      visibility:hidden;
+      transition:all 0.3s ease;
+    }
+    .pp-overlay.show{
+      opacity:1;
+      visibility:visible;
+    }
+    
+    .pp-modal{
+      position:fixed;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%) scale(0.95);
+      width:90%; max-width:500px;
+      max-height:80vh;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+      display:flex;
+      flex-direction:column;
+      opacity:0; visibility:hidden;
+      transition:all 0.3s ease;
+      z-index:10002;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+    }
+    
+    .pp-overlay.show .pp-modal{
+      opacity:1; visibility:visible;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    
+    .pp-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.5rem;
+      border-bottom:1px solid var(--border-soft);
+      background: var(--blush-pink);
+    }
+    
+    .pp-title{
+      font-size:1.3rem;
+      font-weight:700;
+      color:var(--primary-accent);
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .pp-close{
+      background:none; border:none;
+      font-size:1.8rem;
+      color:var(--soft-gray);
+      cursor:pointer;
+      transition:all 0.2s;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    
+    .pp-close:hover{ 
+      color:var(--primary-accent);
+      background: rgba(216, 27, 96, 0.1);
+    }
+    
+    .pp-body{
+      padding:1.5rem;
+      overflow-y:auto;
+      font-size:0.95rem;
+      line-height:1.7;
+      color:var(--soft-gray);
+    }
+    
+    .pp-body h3{
+      font-size:1.1rem;
+      font-weight:600;
+      margin:1.5rem 0 0.8rem;
+      color:var(--charcoal);
+    }
+    
+    .pp-body h3:first-child{ margin-top:0; }
+    
+    .pp-footer{
+      margin-top:1.5rem;
+      padding-top:1rem;
+      border-top:1px solid var(--border-soft);
+      font-size:0.85rem;
+      font-weight:500;
+      text-align:center;
+      color:var(--soft-gray);
+    }
+
+    /* Footer */
+    .footer{
+      background: var(--charcoal);
+      padding:60px 0 30px;
+      position: relative;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dusty-rose), var(--soft-coral), var(--rose-pink));
+    }
+    
+    .footer-brand{
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;
+      font-weight:700;
+      margin-bottom:1rem;
+      color:white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .footer-brand::before {
+      content: '✦';
+      color: var(--soft-coral);
+    }
+    
+    .footer-text{
+      color:var(--light-gray);
+      font-size:0.95rem;
+      line-height:1.8;
+    }
+    
+    .social-icons{
+      display:flex;
+      gap:1rem;
+      margin-top:1.5rem;
+    }
+    
+    .social-icon{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      background: rgba(255,255,255,0.1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      transition:all 0.3s ease;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .social-icon:hover{
+      background:var(--primary-accent);
+      color:white;
+      transform:translateY(-3px) scale(1.1);
+      border-color: var(--primary-accent);
+    }
+    
+    .footer h5{
+      font-weight:600;
+      margin-bottom:1.5rem;
+      color:white;
+      font-size: 1.1rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer h5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--soft-coral);
+    }
+    
+    .footer-links{
+      list-style:none;
+      padding:0;
+    }
+    
+    .footer-links li{
+      margin-bottom:0.8rem;
+    }
+    
+    .footer-links a{
+      color:var(--light-gray);
+      text-decoration:none;
+      transition:all 0.3s ease;
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+    
+    .footer-links a:hover{
+      color:var(--soft-coral);
+      padding-left: 5px;
+    }
+    
+    .copyright{
+      text-align:center;
+      padding-top:30px;
+      margin-top:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:var(--light-gray);
+      font-size:0.9rem;
+    }
+    
+    .copyright span {
+      color: var(--soft-coral);
+    }
+
+    /* Mobile Responsiveness */
+    @media(max-width:768px){
+      section{padding:60px 0;}
+      
+      .hero-section{
+        padding:100px 15px 50px; 
+        min-height: auto;
+        text-align: center;
+      }
+      
+      .hero-headline{
+        font-size:2.2rem;
+        line-height: 1.2;
+      }
+      
+      .hero-subheadline{
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .countdown-container {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .countdown-value {
+        font-size: 1.5rem;
+      }
+      
+      .hero-image-container {
+        margin-top: 3rem;
+      }
+      
+      .about-content {
+        padding-left: 0;
+        margin-top: 2rem;
+      }
+      
+      .about-text-container h2 {
+        font-size: 2rem;
+      }
+      
+      .stat-card {
+        margin-bottom: 15px;
+      }
+      
+      .step-card {
+        margin-bottom: 15px;
+      }
+      
+      .feedback-item {
+        width: 260px;
+        height: 350px;
+      }
+      
+      .btn-primary-custom, .btn-secondary-custom {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
+    
+    @media(prefers-reduced-motion:reduce){
+      *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+      .feedback-track{animation:none !important;}
+      .animate-float {animation: none !important;}
+    }
+    
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--warm-white);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--rose-pink);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--dusty-rose);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Monica</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: var(--border-soft);">
+      <span class="navbar-toggler-icon" style="filter: hue-rotate(320deg);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#feedback">Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#" class="btn-nav open-any" data-source="Navbar">
+        <i data-lucide="sparkles" width="16"></i>
+        Join Now
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+  <div class="hero-bg-shape shape-1"></div>
+  <div class="hero-bg-shape shape-2"></div>
+  <div class="hero-bg-shape shape-3"></div>
+  
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-6 hero-content">
+        <div class="hero-badge">
+          <i data-lucide="crown" width="16"></i>
+          Premium Digital Mentorship
+        </div>
+        
+        <h1 class="hero-headline animate-fade-up">
+          Empowering <span class="highlight">Women</span> to Build Digital Success from Anywhere
+        </h1>
+        
+        <p class="hero-subheadline animate-fade-up delay-100">
+          Join an exclusive community of ambitious women mastering phone-based digital skills. Transform your passion into a thriving income stream with personalized mentorship.
+        </p>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+          <div class="countdown-label">⏰ Next Cohort Starts In</div>
+          <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+              <div class="countdown-value" id="days">00</div>
+              <div class="countdown-unit">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="hours">00</div>
+              <div class="countdown-unit">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="minutes">00</div>
+              <div class="countdown-unit">Mins</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-value" id="seconds">00</div>
+              <div class="countdown-unit">Secs</div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="btn-primary-custom open-any animate-fade-up delay-200" data-source="Hero Button">
+          <i data-lucide="message-circle-heart" width="20"></i>
+          Start Your Journey
+        </button>
+      </div>
+      
+      <div class="col-lg-6 text-center">
+        <div class="hero-image-container animate-float">
+          <div class="hero-image-bg"></div>
+          <img src="https://i.ibb.co/nN7Mh4QM/Monica-Printout.jpg" alt="Monica - Digital Success Mentor" class="hero-image" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section py-5" id="about">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 animate-slide-left">
+        <div class="about-img-container">
+          <img src="https://i.ibb.co/nN7Mh4QM/Monica-Printout.jpg" alt="Monica - Your Digital Success Partner" class="about-img" loading="lazy">
+          <div class="about-img-decoration"></div>
+        </div>
+      </div>
+      
+      <div class="col-lg-7 animate-slide-right">
+        <div class="about-content">
+          <div class="about-text-container">
+            <span class="section-tag">Meet Your Mentor</span>
+            <h2>Hello, I'm Monica</h2>
+            <div class="about-role">Digital Success Strategist & Empowerment Coach</div>
+            
+            <p>
+              Over the years, I've witnessed countless talented women struggle to find their footing in the digital landscape—not because they lacked capability, but because they lacked the right guidance and a supportive ecosystem. This realization became the catalyst for my mission.
+            </p>
+            
+            <p>
+              Today, I specialize in helping women—from college students to working professionals and homemakers—discover their unique digital strengths and monetize them effectively. My approach combines practical skill-building with mindset transformation, ensuring you don't just learn, but actually implement and succeed.
+            </p>
+            
+            <p>
+              Whether you're looking to supplement your income or build a full-fledged digital career, I provide the roadmap, tools, and unwavering support you need to make it happen. Your success story starts with a single decision.
+            </p>
+            
+            <button class="btn-secondary-custom open-any" data-source="About Section">
+              <i data-lucide="heart-handshake" width="18"></i>
+              Let's Connect
+            </button>
+          </div>
+          
+          <!-- Stats -->
+          <div class="row g-3 stats-container">
+            <div class="col-12 col-md-4">
+              <div class="stat-card">
+                <div class="counter" data-target="5" data-suffix="+">0</div>
+                <div class="text-muted">Years Experience</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="stat-card">
+                <div class="counter" data-target="5000" data-suffix="+">0</div>
+                <div class="text-muted">Lives Transformed</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="stat-card">
+                <div class="counter" data-target="98" data-suffix="%">0</div>
+                <div class="text-muted">Success Rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Section -->
+<section class="feedback-section" id="feedback">
+  <div class="container-fluid px-3">
+    <div class="text-center mb-4 px-2">
+      <span class="section-tag" style="padding-left: 0; display: inline-block;">Success Stories</span>
+      <h2 class="display-5 fw-bold mb-3" style="color:var(--charcoal);">Real Women, Real Results</h2>
+      <p class="mb-4" style="color:var(--soft-gray); font-size: 1rem; max-width: 600px; margin: 0 auto;">
+        Witness the transformations of women who took the leap and built their digital success stories
+      </p>
+    </div>
+    
+    <div class="feedback-viewport">
+      <div class="feedback-track">
+        <div class="feedback-item"><img src="https://i.ibb.co/1YsksJ5v/mn1.jpg" alt="Success Story 1" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/HLcLSVyf/mn-2.jpg" alt="Success Story 2" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/KjgcfVkc/mn-3.jpg" alt="Success Story 3" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/GQjHtPpS/mn-4.jpg" alt="Success Story 4" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/LhvbrXSh/mn-6.jpg" alt="Success Story 5" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/fYhPqY04/mn-7.jpg" alt="Success Story 6" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/NgvNyLfk/mn8.jpg" alt="Success Story 7" loading="lazy"></div>
+        <!-- Duplicate for infinite scroll -->
+        <div class="feedback-item"><img src="https://i.ibb.co/1YsksJ5v/mn1.jpg" alt="Success Story 1" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/HLcLSVyf/mn-2.jpg" alt="Success Story 2" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/KjgcfVkc/mn-3.jpg" alt="Success Story 3" loading="lazy"></div>
+        <div class="feedback-item"><img src="https://i.ibb.co/GQjHtPpS/mn-4.jpg" alt="Success Story 4" loading="lazy"></div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5 px-2">
+      <button class="btn-primary-custom open-any" data-source="Feedback Section">
+        <i data-lucide="sparkles" width="18"></i>
+        Become Our Next Success Story
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Steps Section -->
+<section class="steps-section py-5">
+  <div class="container px-3">
+    <div class="text-center mb-5">
+      <span class="section-tag" style="padding-left: 0; display: inline-block;">Your Pathway</span>
+      <h2 class="display-5 fw-bold mb-3" style="color:var(--charcoal);">How Your Transformation Unfolds</h2>
+      <p style="color:var(--soft-gray); max-width: 600px; margin: 0 auto;">
+        A proven 4-step framework designed to take you from curious beginner to confident digital earner
+      </p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-6 col-lg-3">
+        <div class="step-card h-100">
+          <div class="step-icon">
+            <i data-lucide="message-circle" width="24"></i>
+          </div>
+          <div class="step-number">1</div>
+          <h3>Personalized Onboarding</h3>
+          <p>Direct WhatsApp connection for immediate guidance and clarity on your goals</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="step-card h-100">
+          <div class="step-icon">
+            <i data-lucide="graduation-cap" width="24"></i>
+          </div>
+          <div class="step-number">2</div>
+          <h3>Skill Mastery Program</h3>
+          <p>Comprehensive training modules tailored to your schedule and learning pace</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="step-card h-100">
+          <div class="step-icon">
+            <i data-lucide="users" width="24"></i>
+          </div>
+          <div class="step-number">3</div>
+          <h3>1-on-1 Mentorship</h3>
+          <p>Weekly strategy calls and round-the-clock support from me personally</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="step-card h-100">
+          <div class="step-icon">
+            <i data-lucide="trending-up" width="24"></i>
+          </div>
+          <div class="step-number">4</div>
+          <h3>Income Generation</h3>
+          <p>Start implementing from week one and watch your efforts translate into earnings</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <button class="btn-secondary-custom open-any" data-source="Steps">
+        <i data-lucide="rocket" width="18"></i>
+        Begin Your Transformation
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section px-3" id="faq">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-tag" style="padding-left: 0; display: inline-block;">Got Questions?</span>
+      <h2 class="display-5 fw-bold" style="color:var(--charcoal);">Frequently Asked Questions</h2>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What exactly will I learn in this program?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                You'll master high-demand digital skills including social media management, content strategy, digital marketing fundamentals, and personal branding—all designed to be executed entirely from your smartphone. The curriculum is constantly updated to reflect current market trends.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How quickly can I expect to see results?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                While individual results vary based on effort and consistency, most dedicated participants start seeing their first income within 3-4 weeks. By the 3-month mark, many have established steady revenue streams. Remember, this is a skill-building journey, not a get-rich-quick scheme.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Do I need any prior technical knowledge?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Absolutely not. The program is designed for absolute beginners. If you can use WhatsApp and Instagram, you have enough technical foundation to start. We build your skills progressively, ensuring you never feel overwhelmed while always feeling challenged.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                What kind of ongoing support is provided?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                You'll receive comprehensive support including daily WhatsApp availability for quick queries, weekly group strategy sessions, monthly one-on-one progress reviews, and lifetime access to our exclusive community of ambitious women supporting each other's growth.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+  <div class="container text-center px-3">
+    <span class="section-tag" style="padding-left: 0; display: inline-block;">Take Action</span>
+    <h2 class="display-4 fw-bold mb-3" style="color:var(--charcoal);">Ready to Write Your Success Story?</h2>
+    <p class="mb-4" style="color:var(--soft-gray); max-width: 600px; margin: 0 auto;">
+      Thousands of women have already transformed their lives. The only question remaining is: will you be next?
+    </p>
+    
+    <div class="cta-card p-4 p-md-5 mb-4 mx-auto" style="max-width: 700px;">
+      <h3 class="h4 fw-bold mb-3" style="color:var(--charcoal);">📱 Quick Start Checklist</h3>
+      <p class="mb-4" style="color:var(--soft-gray);">Before reaching out, keep these details handy for a seamless onboarding:</p>
+      
+      <div class="row g-3 mb-4 text-start">
+        <div class="col-md-4">
+          <div class="info-box p-3 h-100">
+            <strong>👤 Full Name</strong>
+            As per your ID
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-box p-3 h-100">
+            <strong>🎂 Age</strong>
+            Current age
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-box p-3 h-100">
+            <strong>💼 Occupation</strong>
+            Student/Working/Homemaker
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn-primary-custom open-any animate-pulse-glow" data-source="Final CTA" style="border: none;">
+        <i data-lucide="send" width="18"></i>
+        Connect on WhatsApp Now
+      </button>
+    </div>
+    
+    <p class="small mb-3" style="color:var(--soft-gray); font-style: italic;">
+      "Every expert was once a beginner. Your journey to financial independence starts with a single message."
+    </p>
+    
+    <a href="https://www.instagram.com/digitalmonica25" target="_blank" class="insta-link">
+      <i data-lucide="instagram" width="20"></i>
+      Follow @digitalmonica25
+    </a>
+    
+    <div class="mt-4">
+      <button class="btn btn-outline-secondary btn-sm" id="privacyBtn" style="font-size: 0.8rem; border-color: var(--border-soft); color: var(--soft-gray); padding: 8px 20px; border-radius: 20px;">
+        <i data-lucide="shield" width="14" style="vertical-align: middle; margin-right: 5px;"></i>
+        Privacy Policy
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container px-3">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="footer-brand">Monica</div>
+        <p class="footer-text">
+          Dedicated to empowering women across the globe to achieve financial independence through digital skills. Join our movement of unstoppable women creating their own destinies.
+        </p>
+        <div class="social-icons">
+          <a href="https://wa.me/919220479082" class="social-icon" target="_blank" title="WhatsApp">
+            <i data-lucide="message-circle" width="20"></i>
+          </a>
+          <a href="https://www.instagram.com/digitalmonica25" class="social-icon" target="_blank" title="Instagram">
+            <i data-lucide="instagram" width="20"></i>
+          </a>
+          <a href="#" class="social-icon" title="Email">
+            <i data-lucide="mail" width="20"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-lg-3">
+        <h5>Explore</h5>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Monica</a></li>
+          <li><a href="#feedback">Success Stories</a></li>
+          <li><a href="#faq">Common Questions</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3">
+        <h5>Legal</h5>
+        <ul class="footer-links">
+          <li><a href="#" onclick="openPrivacy();return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="openPrivacy();return false;">Terms of Service</a></li>
+          <li><a href="#" onclick="openPrivacy();return false;">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p class="mb-0">Crafted with <span>♥</span> by Monica | © 2024 All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Form Popup Backdrop -->
+<div class="form-backdrop" id="formBackdrop"></div>
+
+<!-- Privacy Policy Modal -->
+<div class="pp-overlay" id="ppOverlay">
+  <div class="pp-modal">
+    <div class="pp-header">
+      <div class="pp-title">Privacy Policy</div>
+      <button class="pp-close" id="ppClose">&times;</button>
+    </div>
+    <div class="pp-body">
+      <h3>Information Collection</h3>
+      <p>When you connect with us, we collect basic information including your name, contact number, age, and professional background. This data helps us understand your needs and provide personalized mentorship.</p>
+      
+      <h3>Use of Information</h3>
+      <p>Your information is used exclusively to communicate program details, provide mentorship support, and track your progress. We never share your personal data with unrelated third parties for marketing purposes.</p>
+      
+      <h3>Data Security</h3>
+      <p>We implement industry-standard security measures to protect your personal information. Your data is stored securely and accessed only by authorized personnel directly involved in your mentorship.</p>
+      
+      <h3>Your Rights</h3>
+      <p>You have the right to request access to, correction of, or deletion of your personal data at any time. Simply reach out via WhatsApp to exercise these rights.</p>
+      
+      <div class="pp-footer">By engaging with our services, you acknowledge this privacy policy.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Form Popup -->
+<div id="formContainer">
+  <div class="form-card border-0">
+    <div class="form-header">
+      <h2 class="h4 fw-bold mb-1">✨ Begin Your Journey</h2>
+      <p class="small mb-0" style="color:var(--soft-gray);">Fill in your details to get started</p>
+    </div>
+    <div class="card-body p-4 position-relative">
+      <button id="closeFormBtn" class="btn-close position-absolute" style="top: 15px; right: 15px;" aria-label="Close"></button>
+      
+      <form id="mainForm" novalidate>
+        <input type="hidden" id="sourceInfo" name="sourceInfo">
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Full Name *</label>
+            <input id="inp_name" type="text" class="form-control" required placeholder="Enter your full name">
+          </div>
+          <div class="col-12">
+            <label class="form-label">WhatsApp Number *</label>
+            <input id="inp_phone" type="tel" class="form-control" required placeholder="10-digit mobile number" maxlength="10">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Age *</label>
+            <input id="inp_age" type="number" class="form-control" required min="15" max="65" placeholder="Your age">
+          </div>
+          <div class="col-6">
+            <label class="form-label">Gender *</label>
+            <select id="inp_gender" class="form-select" required>
+              <option value="">Select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Current Status *</label>
+            <select id="inp_profession" class="form-select" required>
+              <option value="">Select your status</option>
+              <option>College Student</option>
+              <option>Working Professional</option>
+              <option>Homemaker</option>
+              <option>Entrepreneur</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn-submit">
+              <i data-lucide="send" style="width:18px;vertical-align:middle;margin-right:8px;"></i>
+              Send & Connect on WhatsApp
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Countdown Timer
+function updateCountdown() {
+  // Set target to next Monday
+  const now = new Date();
+  const nextMonday = new Date();
+  nextMonday.setDate(now.getDate() + (1 + 7 - now.getDay()) % 7);
+  nextMonday.setHours(0, 0, 0, 0);
+  
+  // If today is Monday, set to next Monday
+  if (now.getDay() === 1) {
+    nextMonday.setDate(now.getDate() + 7);
+  }
+  
+  const diff = nextMonday - now;
+  
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  
+  document.getElementById('days').textContent = String(days).padStart(2, '0');
+  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Navbar scroll effect
+window.addEventListener('scroll',function(){
+  const navbar=document.querySelector('.navbar');
+  if(window.scrollY>50){
+    navbar.classList.add('scrolled');
+  }else{
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Counter Animation
+const counters=document.querySelectorAll('.counter');
+const counterObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting&&!entry.target.classList.contains('counted')){
+      entry.target.classList.add('counted');
+      const target=+entry.target.getAttribute('data-target');
+      const suffix=entry.target.getAttribute('data-suffix')||'';
+      let current=0;
+      const inc=Math.max(1,Math.floor(target/50));
+      const timer=setInterval(()=>{
+        current+=inc;
+        if(current>=target){current=target;clearInterval(timer);}
+        entry.target.textContent=current.toLocaleString()+suffix;
+      },30);
+    }
+  });
+},{threshold:0.3});
+counters.forEach(counter=>counterObserver.observe(counter));
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right').forEach(el => {
+  observer.observe(el);
+});
+
+// Form Logic
+const formBackdrop=document.getElementById('formBackdrop');
+const formContainer=document.getElementById('formContainer');
+const mainForm=document.getElementById('mainForm');
+const sourceInfo=document.getElementById('sourceInfo');
+const closeFormBtn=document.getElementById('closeFormBtn');
+const ppOverlay=document.getElementById('ppOverlay');
+const ppClose=document.getElementById('ppClose');
+const privacyBtn=document.getElementById('privacyBtn');
+
+const WA_NUMBER_INT="919220479082";
+
+function openForm(source='Website'){
+  sourceInfo.value=source;
+  formBackdrop.classList.add('show');
+  formContainer.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function closeForm(){
+  formBackdrop.classList.remove('show');
+  formContainer.classList.remove('show');
+  document.body.style.overflow='';
+  setTimeout(()=>mainForm.reset(),300);
+}
+
+function openPrivacy(){
+  ppOverlay.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+
+function closePrivacy(){
+  ppOverlay.classList.remove('show');
+  document.body.style.overflow='';
+}
+
+formBackdrop.addEventListener('click',closeForm);
+closeFormBtn.addEventListener('click',closeForm);
+privacyBtn.addEventListener('click',openPrivacy);
+ppClose.addEventListener('click',closePrivacy);
+ppOverlay.addEventListener('click',function(e){if(e.target===ppOverlay)closePrivacy();});
+
+document.addEventListener('click',e=>{
+  const trigger=e.target.closest('.open-any');
+  if(trigger&&!trigger.closest('#formContainer')){
+    e.preventDefault();
+    openForm(trigger.getAttribute('data-source')||'Website');
+  }
+});
+
+mainForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('inp_name').value.trim();
+  const phone=document.getElementById('inp_phone').value.replace(/\D/g,'');
+  const age=document.getElementById('inp_age').value;
+  const gender=document.getElementById('inp_gender').value;
+  const profession=document.getElementById('inp_profession').value;
+
+  if(!name||phone.length<10||!age||!gender||!profession){
+    alert('Please fill all fields correctly with a valid 10-digit phone number.');
+    return;
+  }
+
+  const message=encodeURIComponent(
+    `Hello Monica! 👋\n\nI'm interested in your digital mentorship program. Here are my details:\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n🎂 Age: ${age}\n⚧ Gender: ${gender}\n💼 Status: ${profession}\n\nI'm excited to start my journey. Please share the next steps!\n\nThank you! ✨`
+  );
+
+  window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`,'_blank');
+  closeForm();
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener('click',function(e){
+    e.preventDefault();
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
+// Escape key
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeForm();
+    closePrivacy();
+  }
+});
+</script>
+</body>
+</html>
