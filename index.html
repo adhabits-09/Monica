@@ -41,7 +41,6 @@
 
   <style>
     :root{
-      /* Feminine Color Palette - Soft & Elegant */
       --blush-pink: #fce4ec;
       --rose-pink: #f8bbd9;
       --dusty-rose: #d81b60;
@@ -52,8 +51,6 @@
       --soft-gray: #636e72;
       --light-gray: #b2bec3;
       --border-soft: #ffe0e6;
-      
-      /* Accent */
       --primary-accent: #c2185b;
       --primary-light: #e91e63;
       --glow-pink: rgba(216, 27, 96, 0.2);
@@ -69,13 +66,11 @@
       overflow-x:hidden;
     }
 
-    /* Typography */
     h1, h2, h3, h4, .brand-font {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 700;
     }
 
-    /* Navbar */
     .navbar{
       background: transparent;
       padding:1.2rem 0;
@@ -154,7 +149,6 @@
       box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
     }
 
-    /* Animations */
     @keyframes float {
       0%, 100%{transform: translateY(0px);}
       50%{transform: translateY(-10px);}
@@ -162,10 +156,6 @@
     @keyframes pulseGlow {
       0%,100%{box-shadow:0 0 0 0 rgba(216, 27, 96, 0.4);}
       50%{box-shadow:0 0 20px 10px rgba(216, 27, 96, 0.1);}
-    }
-    @keyframes shimmer {
-      0%{background-position: -1000px 0;}
-      100%{background-position: 1000px 0;}
     }
     @keyframes fadeInUp{
       from{opacity:0;transform:translateY(40px);}
@@ -194,13 +184,9 @@
     .delay-100{animation-delay: 0.1s;}
     .delay-200{animation-delay: 0.2s;}
     .delay-300{animation-delay: 0.3s;}
-    .delay-400{animation-delay: 0.4s;}
-    .delay-500{animation-delay: 0.5s;}
 
-    /* Sections */
     section{padding:80px 0;position:relative;}
     
-    /* HERO */
     .hero-section{
       min-height: 100vh;
       background: linear-gradient(135deg, var(--blush-pink) 0%, var(--warm-white) 50%, var(--cream) 100%);
@@ -290,7 +276,6 @@
       line-height: 1.7;
     }
 
-    /* Countdown Timer */
     .countdown-container {
       background: rgba(255, 255, 255, 0.9);
       border-radius: 16px;
@@ -406,10 +391,46 @@
       opacity: 0.6;
     }
 
-    /* About Section */
+    /* Mentor Photo Section */
+    .mentor-photo-section {
+      background: var(--warm-white);
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    
+    .mentor-photo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    
+    .mentor-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 10px 40px rgba(216, 27, 96, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .mentor-photo-ring {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 3px solid var(--rose-pink);
+      border-radius: 50%;
+      z-index: 1;
+      animation: pulseGlow 2s infinite;
+    }
+
     .about-section{
       background: white;
       position: relative;
+      padding-top: 40px;
     }
     
     .about-section::before {
@@ -421,37 +442,6 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
     }
-    
-    .about-img-container {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .about-img{
-      width:100%;
-      height:auto;
-      max-height:550px;
-      border-radius: 20px;
-      object-fit:cover;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-      border: 1px solid var(--border-soft);
-      position: relative;
-      z-index: 2;
-    }
-    
-    .about-img-decoration {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 3px solid var(--dusty-rose);
-      border-radius: 20px;
-      top: 20px;
-      left: 20px;
-      z-index: 1;
-      opacity: 0.3;
-    }
-    
-    .about-content {padding-left: 2rem;}
     
     .section-tag {
       display: inline-block;
@@ -476,10 +466,6 @@
       background: var(--primary-accent);
     }
     
-    .about-text-container {
-      padding: 0;
-    }
-    
     .about-text-container h2 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
@@ -494,6 +480,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      justify-content: center;
     }
     
     .about-role::before {
@@ -531,7 +518,6 @@
       transform:translateY(-2px);
     }
     
-    /* Stats */
     .stats-container {
       margin-top: 2.5rem;
     }
@@ -586,7 +572,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Feedback Section */
     .feedback-section{
       background: linear-gradient(to bottom, var(--warm-white), white);
       overflow:hidden;
@@ -658,16 +643,16 @@
       transform: scale(1.1);
     }
 
-    /* Steps Section */
     .steps-section{
       background: white;
       position: relative;
     }
     
+    /* COMPACT STEP CARDS */
     .step-card{
       background: white;
-      border-radius: 20px;
-      padding:2rem 1.5rem;
+      border-radius: 16px;
+      padding:1.2rem 1rem;
       border:1px solid var(--border-soft);
       transition:all .4s ease;
       height:100%;
@@ -689,18 +674,32 @@
     }
     
     .step-card:hover{
-      transform:translateY(-8px);
+      transform:translateY(-5px);
       border-color: var(--dusty-rose);
-      box-shadow: 0 15px 40px rgba(216, 27, 96, 0.15);
+      box-shadow: 0 10px 30px rgba(216, 27, 96, 0.15);
     }
     
     .step-card:hover::after {
       height: 100%;
     }
     
+    .step-icon {
+      width: 45px;
+      height: 45px;
+      background: var(--blush-pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.6rem;
+      color: var(--primary-accent);
+      position: relative;
+      z-index: 1;
+    }
+    
     .step-number{
-      width:50px; 
-      height:50px;
+      width:35px; 
+      height:35px;
       background: linear-gradient(135deg, var(--primary-accent), var(--primary-light));
       color: white;
       border-radius:50%;
@@ -708,45 +707,31 @@
       align-items:center;
       justify-content:center;
       font-weight:700;
-      font-size:1.2rem;
-      margin: 0 auto 1.2rem;
+      font-size:0.9rem;
+      margin: 0 auto 0.6rem;
       position: relative;
       z-index: 1;
-      box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+      box-shadow: 0 3px 10px rgba(216, 27, 96, 0.3);
     }
     
     .step-card h3{
       color:var(--charcoal); 
-      font-size: 1.2rem; 
+      font-size: 1rem; 
       font-weight: 700;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.4rem;
       position: relative;
       z-index: 1;
     }
     
     .step-card p{
       color:var(--soft-gray); 
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       position: relative;
       z-index: 1;
-      line-height: 1.6;
-    }
-    
-    .step-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--blush-pink);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      color: var(--primary-accent);
-      position: relative;
-      z-index: 1;
+      line-height: 1.5;
+      margin-bottom: 0;
     }
 
-    /* FAQ Section */
     .faq-section{
       background: var(--warm-white);
       position: relative;
@@ -794,7 +779,6 @@
       line-height: 1.7;
     }
 
-    /* CTA Section */
     .cta-section{
       background: linear-gradient(180deg, white 0%, var(--blush-pink) 100%);
       position:relative;
@@ -863,7 +847,6 @@
       transform: translateY(-2px);
     }
 
-    /* Form Popup */
     .form-backdrop{
       position:fixed;inset:0;
       background:rgba(0,0,0,.7);
@@ -952,7 +935,6 @@
       box-shadow: 0 8px 25px rgba(216, 27, 96, 0.4);
     }
 
-    /* Privacy Policy Modal */
     .pp-overlay{
       position:fixed;
       inset:0;
@@ -1053,7 +1035,6 @@
       color:var(--soft-gray);
     }
 
-    /* Footer */
     .footer{
       background: var(--charcoal);
       padding:60px 0 30px;
@@ -1173,7 +1154,6 @@
       color: var(--soft-coral);
     }
 
-    /* Mobile Responsiveness */
     @media(max-width:768px){
       section{padding:60px 0;}
       
@@ -1203,13 +1183,9 @@
         font-size: 1.5rem;
       }
       
-      .hero-image-container {
-        margin-top: 3rem;
-      }
-      
-      .about-content {
-        padding-left: 0;
-        margin-top: 2rem;
+      .mentor-photo {
+        width: 150px;
+        height: 150px;
       }
       
       .about-text-container h2 {
@@ -1222,6 +1198,26 @@
       
       .step-card {
         margin-bottom: 15px;
+        padding: 1rem 0.8rem;
+      }
+      
+      .step-icon {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+      }
+      
+      .step-card h3 {
+        font-size: 0.9rem;
+      }
+      
+      .step-card p {
+        font-size: 0.75rem;
       }
       
       .feedback-item {
@@ -1241,7 +1237,6 @@
       .animate-float {animation: none !important;}
     }
     
-    /* Scrollbar Styling */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -1281,15 +1276,15 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero Section - SIRF TEXT -->
 <section class="hero-section" id="home">
   <div class="hero-bg-shape shape-1"></div>
   <div class="hero-bg-shape shape-2"></div>
   <div class="hero-bg-shape shape-3"></div>
   
   <div class="container position-relative">
-    <div class="row align-items-center">
-      <div class="col-lg-6 hero-content">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center hero-content">
         <div class="hero-badge">
           <i data-lucide="crown" width="16"></i>
           Premium Digital Mentorship
@@ -1299,12 +1294,12 @@
           Empowering <span class="highlight">Women</span> to Build Digital Success from Anywhere
         </h1>
         
-        <p class="hero-subheadline animate-fade-up delay-100">
+        <p class="hero-subheadline animate-fade-up delay-100" style="margin-left: auto; margin-right: auto;">
           Join an exclusive community of ambitious women mastering phone-based digital skills. Transform your passion into a thriving income stream with personalized mentorship.
         </p>
         
         <!-- Countdown Timer -->
-        <div class="countdown-container">
+        <div class="countdown-container" style="margin-left: auto; margin-right: auto;">
           <div class="countdown-label">⏰ Next Cohort Starts In</div>
           <div class="countdown-timer" id="countdown">
             <div class="countdown-item">
@@ -1331,72 +1326,68 @@
           Start Your Journey
         </button>
       </div>
-      
-      <div class="col-lg-6 text-center">
-        <div class="hero-image-container animate-float">
-          <div class="hero-image-bg"></div>
-          <img src="https://i.ibb.co/nN7Mh4QM/Monica-Printout.jpg" alt="Monica - Digital Success Mentor" class="hero-image" loading="lazy">
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
+<!-- Mentor Photo Section - "Meet Your Mentor" ke upar -->
+<section class="mentor-photo-section">
+  <div class="container">
+    <div class="mentor-photo-container animate-float">
+      <div class="mentor-photo-ring"></div>
+      <img src="https://i.ibb.co/nN7Mh4QM/Monica-Printout.jpg" alt="Monica - Digital Success Mentor" class="mentor-photo">
+    </div>
+  </div>
+</section>
+
+<!-- About Section - SIRF TEXT -->
 <section class="about-section py-5" id="about">
   <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5 animate-slide-left">
-        <div class="about-img-container">
-          <img src="https://i.ibb.co/nN7Mh4QM/Monica-Printout.jpg" alt="Monica - Your Digital Success Partner" class="about-img" loading="lazy">
-          <div class="about-img-decoration"></div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 animate-fade-up">
+        <div class="text-center mb-4">
+          <span class="section-tag" style="padding-left: 0; display: inline-block;">Meet Your Mentor</span>
+          <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--charcoal);">Hello, I'm Monica</h2>
+          <div class="about-role" style="justify-content: center;">Digital Success Strategist & Empowerment Coach</div>
         </div>
-      </div>
-      
-      <div class="col-lg-7 animate-slide-right">
-        <div class="about-content">
-          <div class="about-text-container">
-            <span class="section-tag">Meet Your Mentor</span>
-            <h2>Hello, I'm Monica</h2>
-            <div class="about-role">Digital Success Strategist & Empowerment Coach</div>
-            
-            <p>
-              Over the years, I've witnessed countless talented women struggle to find their footing in the digital landscape—not because they lacked capability, but because they lacked the right guidance and a supportive ecosystem. This realization became the catalyst for my mission.
-            </p>
-            
-            <p>
-              Today, I specialize in helping women—from college students to working professionals and homemakers—discover their unique digital strengths and monetize them effectively. My approach combines practical skill-building with mindset transformation, ensuring you don't just learn, but actually implement and succeed.
-            </p>
-            
-            <p>
-              Whether you're looking to supplement your income or build a full-fledged digital career, I provide the roadmap, tools, and unwavering support you need to make it happen. Your success story starts with a single decision.
-            </p>
-            
-            <button class="btn-secondary-custom open-any" data-source="About Section">
-              <i data-lucide="heart-handshake" width="18"></i>
-              Let's Connect
-            </button>
-          </div>
+        
+        <div class="about-text-container text-center">
+          <p style="color: var(--soft-gray); font-size: 1rem; line-height: 1.8; margin-bottom: 1.2rem;">
+            Over the years, I've witnessed countless talented women struggle to find their footing in the digital landscape—not because they lacked capability, but because they lacked the right guidance and a supportive ecosystem. This realization became the catalyst for my mission.
+          </p>
           
-          <!-- Stats -->
-          <div class="row g-3 stats-container">
-            <div class="col-12 col-md-4">
-              <div class="stat-card">
-                <div class="counter" data-target="5" data-suffix="+">0</div>
-                <div class="text-muted">Years Experience</div>
-              </div>
+          <p style="color: var(--soft-gray); font-size: 1rem; line-height: 1.8; margin-bottom: 1.2rem;">
+            Today, I specialize in helping women—from college students to working professionals and homemakers—discover their unique digital strengths and monetize them effectively. My approach combines practical skill-building with mindset transformation, ensuring you don't just learn, but actually implement and succeed.
+          </p>
+          
+          <p style="color: var(--soft-gray); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            Whether you're looking to supplement your income or build a full-fledged digital career, I provide the roadmap, tools, and unwavering support you need to make it happen. Your success story starts with a single decision.
+          </p>
+          
+          <button class="btn-secondary-custom open-any" data-source="About Section">
+            <i data-lucide="heart-handshake" width="18"></i>
+            Let's Connect
+          </button>
+        </div>
+        
+        <!-- Stats -->
+        <div class="row g-3 stats-container mt-5">
+          <div class="col-12 col-md-4">
+            <div class="stat-card">
+              <div class="counter" data-target="5" data-suffix="+">0</div>
+              <div class="text-muted">Years Experience</div>
             </div>
-            <div class="col-12 col-md-4">
-              <div class="stat-card">
-                <div class="counter" data-target="5000" data-suffix="+">0</div>
-                <div class="text-muted">Lives Transformed</div>
-              </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="stat-card">
+              <div class="counter" data-target="5000" data-suffix="+">0</div>
+              <div class="text-muted">Lives Transformed</div>
             </div>
-            <div class="col-12 col-md-4">
-              <div class="stat-card">
-                <div class="counter" data-target="98" data-suffix="%">0</div>
-                <div class="text-muted">Success Rate</div>
-              </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="stat-card">
+              <div class="counter" data-target="98" data-suffix="%">0</div>
+              <div class="text-muted">Success Rate</div>
             </div>
           </div>
         </div>
@@ -1442,61 +1433,61 @@
   </div>
 </section>
 
-<!-- Steps Section -->
+<!-- Steps Section - COMPACT HEIGHT -->
 <section class="steps-section py-5">
   <div class="container px-3">
-    <div class="text-center mb-5">
+    <div class="text-center mb-4">
       <span class="section-tag" style="padding-left: 0; display: inline-block;">Your Pathway</span>
       <h2 class="display-5 fw-bold mb-3" style="color:var(--charcoal);">How Your Transformation Unfolds</h2>
-      <p style="color:var(--soft-gray); max-width: 600px; margin: 0 auto;">
+      <p style="color:var(--soft-gray); max-width: 600px; margin: 0 auto; font-size: 0.9rem;">
         A proven 4-step framework designed to take you from curious beginner to confident digital earner
       </p>
     </div>
     
-    <div class="row g-4">
+    <div class="row g-3">
       <div class="col-6 col-lg-3">
         <div class="step-card h-100">
           <div class="step-icon">
-            <i data-lucide="message-circle" width="24"></i>
+            <i data-lucide="message-circle" width="20"></i>
           </div>
           <div class="step-number">1</div>
           <h3>Personalized Onboarding</h3>
-          <p>Direct WhatsApp connection for immediate guidance and clarity on your goals</p>
+          <p>Direct WhatsApp connection for immediate guidance</p>
         </div>
       </div>
       <div class="col-6 col-lg-3">
         <div class="step-card h-100">
           <div class="step-icon">
-            <i data-lucide="graduation-cap" width="24"></i>
+            <i data-lucide="graduation-cap" width="20"></i>
           </div>
           <div class="step-number">2</div>
           <h3>Skill Mastery Program</h3>
-          <p>Comprehensive training modules tailored to your schedule and learning pace</p>
+          <p>Comprehensive training modules tailored for you</p>
         </div>
       </div>
       <div class="col-6 col-lg-3">
         <div class="step-card h-100">
           <div class="step-icon">
-            <i data-lucide="users" width="24"></i>
+            <i data-lucide="users" width="20"></i>
           </div>
           <div class="step-number">3</div>
           <h3>1-on-1 Mentorship</h3>
-          <p>Weekly strategy calls and round-the-clock support from me personally</p>
+          <p>Weekly strategy calls & round-the-clock support</p>
         </div>
       </div>
       <div class="col-6 col-lg-3">
         <div class="step-card h-100">
           <div class="step-icon">
-            <i data-lucide="trending-up" width="24"></i>
+            <i data-lucide="trending-up" width="20"></i>
           </div>
           <div class="step-number">4</div>
           <h3>Income Generation</h3>
-          <p>Start implementing from week one and watch your efforts translate into earnings</p>
+          <p>Start implementing from week one & earn</p>
         </div>
       </div>
     </div>
     
-    <div class="text-center mt-5">
+    <div class="text-center mt-4">
       <button class="btn-secondary-custom open-any" data-source="Steps">
         <i data-lucide="rocket" width="18"></i>
         Begin Your Transformation
@@ -1773,13 +1764,11 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwEpV2U8HQ7YoSjAzUxQ
 
 // Countdown Timer
 function updateCountdown() {
-  // Set target to next Monday
   const now = new Date();
   const nextMonday = new Date();
   nextMonday.setDate(now.getDate() + (1 + 7 - now.getDay()) % 7);
   nextMonday.setHours(0, 0, 0, 0);
   
-  // If today is Monday, set to next Monday
   if (now.getDay() === 1) {
     nextMonday.setDate(now.getDate() + 7);
   }
@@ -1899,52 +1888,81 @@ document.addEventListener('click',e=>{
   }
 });
 
-mainForm.addEventListener('submit',e=>{
+mainForm.addEventListener('submit',function(e){
   e.preventDefault();
+  
   const name=document.getElementById('inp_name').value.trim();
   const phone=document.getElementById('inp_phone').value.replace(/\D/g,'');
   const age=document.getElementById('inp_age').value;
   const gender=document.getElementById('inp_gender').value;
   const profession=document.getElementById('inp_profession').value;
+  const source=sourceInfo.value || 'Website';
 
   if(!name||phone.length<10||!age||!gender||!profession){
     alert('Please fill all fields correctly with a valid 10-digit phone number.');
     return;
   }
 
-  // Prepare form data for Google Sheets
-  const formData=new FormData();
-  formData.append('name',name);
-  formData.append('phone',phone);
-  formData.append('age',age);
-  formData.append('gender',gender);
-  formData.append('profession',profession);
-  formData.append('source',sourceInfo.value||'Website');
-  formData.append('timestamp',new Date().toISOString());
+  // Create data object for Google Sheets
+  const data = {
+    name: name,
+    phone: phone,
+    age: age,
+    gender: gender,
+    profession: profession,
+    source: source,
+    timestamp: new Date().toISOString()
+  };
 
-  // Send to Google Sheets
-  fetch(SCRIPT_URL,{
-    method:'POST',
-    body:formData,
-    mode:'no-cors'
-  }).catch(err=>console.error('Sheet error:',err));
+  // Send to Google Sheets using fetch with proper headers
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }).then(() => {
+    console.log('Data sent to Google Sheets successfully');
+  }).catch((error) => {
+    console.error('Error:', error);
+  });
+
+  // Also try FormData method as backup
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('phone', phone);
+  formData.append('age', age);
+  formData.append('gender', gender);
+  formData.append('profession', profession);
+  formData.append('source', source);
+  formData.append('timestamp', new Date().toISOString());
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  }).catch(err => console.log('Backup form submission'));
 
   // Facebook Pixel Tracking
-  if(typeof fbq!=='undefined'){
-    fbq('track','Contact');
-    fbq('track','Lead',{
-      content_name:'WhatsApp Form Submission',
-      content_category:'Lead Generation'
+  if(typeof fbq !== 'undefined'){
+    fbq('track', 'Contact');
+    fbq('track', 'Lead', {
+      content_name: 'WhatsApp Form Submission',
+      content_category: 'Lead Generation'
     });
   }
 
   // Prepare WhatsApp message
-  const message=encodeURIComponent(
+  const message = encodeURIComponent(
     `Hello Monica! 👋\n\nI'm interested in your digital mentorship program. Here are my details:\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n🎂 Age: ${age}\n⚧ Gender: ${gender}\n💼 Status: ${profession}\n\nI'm excited to start my journey. Please share the next steps!\n\nThank you! ✨`
   );
 
   // Open WhatsApp
-  window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`,'_blank');
+  window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`, '_blank');
+  
+  // Close form
   closeForm();
 });
 
