@@ -22,6 +22,23 @@
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '3549900278500178');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=3549900278500178&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     :root{
       /* Feminine Color Palette - Soft & Elegant */
@@ -1751,6 +1768,9 @@
 // Initialize Lucide icons
 lucide.createIcons();
 
+// Google Sheets Script URL
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwEpV2U8HQ7YoSjAzUxQzwzLOCm2EjZ5K3-COKKgIwglVLxWWSxeWt8LBbsYS7-5-l2QA/exec";
+
 // Countdown Timer
 function updateCountdown() {
   // Set target to next Monday
@@ -1892,10 +1912,38 @@ mainForm.addEventListener('submit',e=>{
     return;
   }
 
+  // Prepare form data for Google Sheets
+  const formData=new FormData();
+  formData.append('name',name);
+  formData.append('phone',phone);
+  formData.append('age',age);
+  formData.append('gender',gender);
+  formData.append('profession',profession);
+  formData.append('source',sourceInfo.value||'Website');
+  formData.append('timestamp',new Date().toISOString());
+
+  // Send to Google Sheets
+  fetch(SCRIPT_URL,{
+    method:'POST',
+    body:formData,
+    mode:'no-cors'
+  }).catch(err=>console.error('Sheet error:',err));
+
+  // Facebook Pixel Tracking
+  if(typeof fbq!=='undefined'){
+    fbq('track','Contact');
+    fbq('track','Lead',{
+      content_name:'WhatsApp Form Submission',
+      content_category:'Lead Generation'
+    });
+  }
+
+  // Prepare WhatsApp message
   const message=encodeURIComponent(
     `Hello Monica! 👋\n\nI'm interested in your digital mentorship program. Here are my details:\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n🎂 Age: ${age}\n⚧ Gender: ${gender}\n💼 Status: ${profession}\n\nI'm excited to start my journey. Please share the next steps!\n\nThank you! ✨`
   );
 
+  // Open WhatsApp
   window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`,'_blank');
   closeForm();
 });
