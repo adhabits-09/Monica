@@ -1286,24 +1286,50 @@
         opacity: 0.5;
       }
       
+      /* Headline 2-3 lines on mobile */
       .hero-headline{
-        font-size:2.2rem;
-        line-height: 1.2;
+        font-size:1.8rem;
+        line-height: 1.3;
+        max-width: 100%;
+        padding: 0 10px;
       }
       
       .hero-subheadline{
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin-left: auto;
         margin-right: auto;
+        padding: 0 10px;
       }
       
+      /* Smaller countdown timer */
       .countdown-container {
         margin-left: auto;
         margin-right: auto;
+        padding: 1rem 0.8rem;
+        max-width: 320px;
+      }
+      
+      .countdown-timer {
+        gap: 8px;
+      }
+      
+      .countdown-item {
+        min-width: 55px;
+        padding: 8px 5px;
+        border-radius: 8px;
       }
       
       .countdown-value {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+      }
+      
+      .countdown-unit {
+        font-size: 0.6rem;
+      }
+      
+      .countdown-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.6rem;
       }
       
       .mentor-photo-section {
@@ -1319,17 +1345,61 @@
         height: 30px;
       }
       
+      /* About section - Hello I'm Monica in one line */
       .about-text-container h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        white-space: nowrap;
       }
       
       .stat-card {
         margin-bottom: 15px;
       }
       
+      /* Steps section mobile fixes */
+      .steps-section h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* Smaller step cards without numbers */
       .step-card {
-        margin-bottom: 15px;
-        padding: 1.5rem 1rem;
+        margin-bottom: 10px;
+        padding: 1rem 0.8rem;
+        border-radius: 16px;
+      }
+      
+      .step-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        margin-bottom: 0.6rem;
+      }
+      
+      .step-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .step-number{
+        display: none; /* Hide numbers on mobile */
+      }
+      
+      .step-card h3{
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.3;
+      }
+      
+      .step-card p{
+        font-size: 0.75rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       
       .feedback-item {
@@ -1553,7 +1623,7 @@
   <div class="container px-3">
     <div class="text-center mb-4">
       <span class="section-tag" style="padding-left: 0; display: inline-block;">Your Pathway</span>
-      <h2 class="display-5 fw-bold mb-3" style="color:var(--text-primary);">How Your Transformation Unfolds</h2>
+      <h2 class="display-5 fw-bold mb-3" style="color:var(--text-primary); font-size: 2.5rem;">How Your Transformation Unfolds</h2>
       <p style="color:var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
         A proven 4-step framework designed to take you from curious beginner to confident digital earner
       </p>
@@ -1807,7 +1877,7 @@
       <h3>Your Rights</h3>
       <p>You have the right to request access to, correction of, or deletion of your personal data at any time. Simply reach out via WhatsApp to exercise these rights.</p>
       
-      <div class="pp-footer">By engaging with our services, you acknowledge this privacy policy.</div>
+      div class="pp-footer">By engaging with our services, you acknowledge this privacy policy.</div>
     </div>
   </div>
 </div>
