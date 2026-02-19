@@ -22,7 +22,7 @@
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code - Simplified -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,7 +37,6 @@
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=4217391931811438&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel Code -->
 
   <style>
     :root{
@@ -1877,7 +1876,7 @@
       <h3>Your Rights</h3>
       <p>You have the right to request access to, correction of, or deletion of your personal data at any time. Simply reach out via WhatsApp to exercise these rights.</p>
       
-      div class="pp-footer">By engaging with our services, you acknowledge this privacy policy.</div>
+      <div class="pp-footer">By engaging with our services, you acknowledge this privacy policy.</div>
     </div>
   </div>
 </div>
@@ -2066,6 +2065,7 @@ document.addEventListener('click',e=>{
   }
 });
 
+/* ---- SIMPLIFIED FORM SUBMIT - ONLY CONTACT EVENT ---- */
 mainForm.addEventListener('submit',function(e){
   e.preventDefault();
   
@@ -2081,7 +2081,7 @@ mainForm.addEventListener('submit',function(e){
     return;
   }
 
-  // Only send data ONCE using FormData (not JSON + FormData)
+  // Google Sheet data
   const formData = new FormData();
   formData.append('name', name);
   formData.append('phone', phone);
@@ -2091,30 +2091,26 @@ mainForm.addEventListener('submit',function(e){
   formData.append('source', source);
   formData.append('timestamp', new Date().toISOString());
 
+  // Send to Google Sheets (fire and forget)
   fetch(SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
     body: formData
-  })
-  .then(() => {
-    console.log('Data sent to Google Sheets successfully');
-  })
-  .catch((error) => {
-    console.error('Error:', error);
+  }).catch((error) => {
+    console.error('Sheet error:', error);
   });
 
+  // SIMPLIFIED META PIXEL - ONLY CONTACT EVENT, NO EXTRA PARAMETERS
   if(typeof fbq !== 'undefined'){
     fbq('track', 'Contact');
-    fbq('track', 'Lead', {
-      content_name: 'WhatsApp Form Submission',
-      content_category: 'Lead Generation'
-    });
   }
 
+  // WhatsApp redirect
   const message = encodeURIComponent(
     `Hello Monica! 👋\n\nI'm interested in your digital mentorship program. Here are my details:\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n🎂 Age: ${age}\n⚧ Gender: ${gender}\n💼 Status: ${profession}\n\nI'm excited to start my journey. Please share the next steps!\n\nThank you! ✨`
   );
 
+  // FIXED: Removed space in wa.me URL
   window.open(`https://wa.me/${WA_NUMBER_INT}?text=${message}`, '_blank');
   
   closeForm();
