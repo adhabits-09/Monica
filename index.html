@@ -1906,12 +1906,22 @@
             <label class="form-label">Age *</label>
             <input id="inp_age" type="number" class="form-control" required min="15" max="65" placeholder="Your age">
           </div>
+          <!-- LANGUAGE SECTION (Replaced Gender) -->
           <div class="col-6">
-            <label class="form-label">Gender *</label>
-            <select id="inp_gender" class="form-select" required>
+            <label class="form-label">Language *</label>
+            <select id="inp_language" class="form-select" required>
               <option value="">Select</option>
-              <option value="female">Female</option>
-              <option value="male">Male</option>
+              <option value="hindi">Hindi</option>
+              <option value="english">English</option>
+              <option value="hinglish">Hinglish</option>
+              <option value="marathi">Marathi</option>
+              <option value="gujarati">Gujarati</option>
+              <option value="tamil">Tamil</option>
+              <option value="telugu">Telugu</option>
+              <option value="bengali">Bengali</option>
+              <option value="kannada">Kannada</option>
+              <option value="malayalam">Malayalam</option>
+              <option value="punjabi">Punjabi</option>
               <option value="other">Other</option>
             </select>
           </div>
@@ -2072,11 +2082,11 @@ mainForm.addEventListener('submit',function(e){
   const name=document.getElementById('inp_name').value.trim();
   const phone=document.getElementById('inp_phone').value.replace(/\D/g,'');
   const age=document.getElementById('inp_age').value;
-  const gender=document.getElementById('inp_gender').value;
+  const language=document.getElementById('inp_language').value; // Changed from gender to language
   const profession=document.getElementById('inp_profession').value;
   const source=sourceInfo.value || 'Website';
 
-  if(!name||phone.length<10||!age||!gender||!profession){
+  if(!name||phone.length<10||!age||!language||!profession){
     alert('Please fill all fields correctly with a valid 10-digit phone number.');
     return;
   }
@@ -2086,7 +2096,7 @@ mainForm.addEventListener('submit',function(e){
   formData.append('name', name);
   formData.append('phone', phone);
   formData.append('age', age);
-  formData.append('gender', gender);
+  formData.append('language', language); // Changed from gender to language
   formData.append('profession', profession);
   formData.append('source', source);
   formData.append('timestamp', new Date().toISOString());
@@ -2107,7 +2117,7 @@ mainForm.addEventListener('submit',function(e){
 
   // WhatsApp redirect
   const message = encodeURIComponent(
-    `Hello Monica! 👋\n\nI'm interested in your digital mentorship program. Here are my details:\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n🎂 Age: ${age}\n⚧ Gender: ${gender}\n💼 Status: ${profession}\n\nI'm excited to start my journey. Please share the next steps!\n\nThank you! ✨`
+    `Hello Monica! 👋\n\nI'm interested in your digital mentorship program. Here are my details:\n\n📝 Name: ${name}\n📱 Phone: ${phone}\n🎂 Age: ${age}\n🌐 Language: ${language}\n💼 Status: ${profession}\n\nI'm excited to start my journey. Please share the next steps!\n\nThank you! ✨`
   );
 
   // FIXED: Removed space in wa.me URL
