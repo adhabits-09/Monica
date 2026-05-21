@@ -2104,8 +2104,9 @@ mainForm.addEventListener('submit',function(e){
   });
 
   // SIMPLIFIED META PIXEL - ONLY CONTACT EVENT, NO EXTRA PARAMETERS
-  if(typeof fbq !== 'undefined'){
+  if(typeof fbq !== 'undefined' && !sessionStorage.getItem('contactTracked')){
     fbq('track', 'Contact');
+    sessionStorage.setItem('contactTracked', 'true');
   }
 
   // WhatsApp redirect
