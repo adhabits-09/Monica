@@ -1433,6 +1433,7 @@
     }
   </style>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
 
@@ -2103,7 +2104,7 @@ mainForm.addEventListener('submit',function(e){
     console.error('Sheet error:', error);
   });
 
-  // SIMPLIFIED META PIXEL - ONLY CONTACT EVENT, NO EXTRA PARAMETERS
+  // Meta Pixel - Contact event (fires once per session)
   if(typeof fbq !== 'undefined' && !sessionStorage.getItem('contactTracked')){
     fbq('track', 'Contact');
     sessionStorage.setItem('contactTracked', 'true');
